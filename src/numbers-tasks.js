@@ -226,7 +226,9 @@ const toNumber = (value, def) => (+value ? value : def);
  *   -2 => -8
  *   0  => 0
  */
-const getCube = (num) => num ** 3;
+function getCube(num) {
+  return num ** 3;
+}
 
 /**
  * Returns the Fibonacci number located at the index position.
