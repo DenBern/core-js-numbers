@@ -431,7 +431,7 @@ function isInteger(number) {
  * 'abcdefgh'      => NaN
  */
 function getFloatOnString(str) {
-  return Number.parseFloat(str.replace(/[^0-9, .]/g, ' '));
+  return Number.parseFloat(str);
 }
 
 /**
@@ -449,7 +449,7 @@ function getFloatOnString(str) {
  * '10', 8              => 8
  */
 function getIntegerOnString(str, base) {
-  return Number.isNaN(parseInt(str, base)) ? NaN : parseInt(str, base);
+  return Number.parseInt(str, base);
 }
 /**
  * Returns whether a number is a safe integer.
@@ -553,7 +553,7 @@ function getSumOfNumbers(x1, x2, x3) {
  * 0, 5   => 5
  */
 function getMaxNumber(firstNumber, secondNumber) {
-  return firstNumber > secondNumber ? firstNumber : secondNumber;
+  return Math.max(firstNumber, secondNumber);
 }
 
 /**
@@ -582,9 +582,7 @@ const getRandomInteger = (min, max) =>
  * 3, 4 => 5
  */
 function getHypotenuse(a, b) {
-  return Math.sqrt(a ** 2 + b ** 2) === Infinity
-    ? Number.MAX_VALUE
-    : Math.sqrt(a ** 2 + b ** 2);
+  return Math.hypot(a, b);
 }
 
 /**
